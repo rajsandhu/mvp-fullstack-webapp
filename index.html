@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Sign In</h1>
+    <h1>NOTES Sign In</h1>
     <form>
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <button type="submit">Log In</button>
-      <div class="button-group">
-          <button class="form-button">Forgot Password</button>
-          <button class="form-button">Create Account</button>
-      </div>
-      <button class="form-button">Contact</button>
-  </form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit" formaction="dashboard.html">Log In</button>
+    </form>
+
+    <div class="button-group">
+        <a href="pw-reset.html" class="form-button">Forgot Password</a>
+        <a href="create-account.html" class="form-button">Create Account</a>
+    </div>
+
+    <a href="contact.html" class="form-button">Contact</a>
 </body>
 </html>
