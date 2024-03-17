@@ -78,23 +78,58 @@ button {
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
+    height: 100vh;
 }
 
 .notes-index {
     flex: 1;
     max-width: 300px; /* Adjust based on your design */
     order: 1; /* Default order for larger screens */
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 .write-note {
     flex: 3;
-    order: 1; /* Default order for larger screens */
+    order: 2; /* Default order for larger screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Take up the full height of the container */
+}
+
+.write-note textarea {
+    flex-grow: 1; /* Allow the textarea to expand and fill available space */
+    width: 100%; /* Ensure the textarea takes up the full width */
+    resize: none; /* Prevent manual resizing */
+}
+
+.write-note .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Add some space between the buttons */
+    width: 100%; /* Ensure the group takes the full width of the form */
+}
+
+
+
+.write-note button {
+    padding: 10px 20px; /* Adjust padding to fit the text */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px; /* Set a fixed width for the buttons */
+}
+
+.write-note button.new-note {
+    background-color: green !important;
+    background-image: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
 }
 
 /* Adjust layout for smaller screens */
 @media (max-width: 768px) {
     .dashboard-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack the notes column below the write note area */
     }
     .notes-index {
         order: 2; /* Change order for smaller screens */
@@ -102,4 +137,18 @@ button {
     .write-note {
         order: 1; /* Change order for smaller screens */
     }
+    .write-note .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+    }
+}
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
